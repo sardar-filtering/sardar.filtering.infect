@@ -13,7 +13,7 @@ pkg install git -y
 git clone https://github.com/sardar-filtering/sardar.filtering.infect
 
 
-cd sardar
+cd sardar.filtering.infect
 
 
-python sardar.filtering.infect.py
+python sardar.py
