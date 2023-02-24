@@ -17,3 +17,6 @@ cd sardar.filtering.infect
 
 
 python sardar.py
+
+
+پیامبر دایسون هستم خالق پیامبر همون سردار فیلترینگ گیت هاب مضر برای فیلترینگ
