@@ -1,0 +1,1812 @@
+<!DOCTYPE html><html><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/.static/css/global.css" type="text/css" rel="stylesheet">
+  <link href="/.static/css/tomorrow.css" type="text/css" rel="stylesheet">
+  
+  <link href="/.static/css/webring.css" type="text/css" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="/.static/font-awesome/css/all.min.css">
+<title>/film/ - /lolita/core</title><link rel="stylesheet" type="text/css" href="/film/custom.css"></head>
+<body id="board-thread">
+
+  <script src="/.static/js/themeLoader.js"></script>
+
+  <nav class="top-nav" role="navigation">
+    <div id="dynamicHeader"><span id="navLinkSpan" class="bracket-list">
+  <a href="/">
+    <i class="fa fa-home"></i>
+    Home
+  </a>
+  <a href="/boards.js">
+    <i class="fa fa-tags"></i>
+    Boards
+  </a>
+  <a href="/overboard">
+    <i class="fa fa-synagogue"></i>
+    Overboard
+  </a>
+  <a href="/sfwoverboard">
+    <i class="fas fa-briefcase"></i>
+    SFW Overboard
+  </a>
+  <a href="/.static/pages/posting.html">
+    <i class="fa fa-question"></i>
+    Info
+  </a>
+  <a href="/account.js">
+    <i class="fa fa-key"></i>
+    Account
+  </a>
+</span>
+
+<span id="navBoardsSpan" class="bracket-list"></span>
+</div>
+    <div class="top-nav-dynamic bracket-list">
+      <a href="#"><i class="fa fa-arrow-up"></i></a>
+      <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+    </div>
+  </nav>
+
+
+  <header class="board-header">
+    <img id="bannerImage" src="/randomBanner.js?boardUri=film">
+    <p id="labelName">/film/ - FILM</p>
+    <p id="labelDescription">FILM v 4.0</p>
+  </header>
+
+  <div class="global-announcement-board-owners-feel-free-to-hide-this" id="globalAnnouncement"><div><p style="font-size:50%"><a href="/special_static/anoncafe_fallback.txt">SAVE THIS FILE: Anon.cafe Fallback File v1.1 (updated 2021-12-13)</a></p></div> <div class="community-announcements-board-owners-feel-free-to-hide-this">
+  <p style="font-size:40%">Want your event posted here? Requests accepted in this <a href="/meta/res/13261.html">/meta/ thread</a>.</p>
+</div></div>
+
+  <form id="postingForm" action="/replyThread.js" enctype="multipart/form-data" method="POST"><div class="post-form-container">
+  <table id="posting-table">
+    <tbody><tr id="divName">
+      <th><label for="fieldName">Name</label></th>
+      <td>
+        <input type="text" class="postingInput" id="fieldName" name="name">
+      </td>
+    </tr>
+
+    <tr>
+      <th><label for="fieldSubject">Subject</label></th>
+      <td>
+        <input type="text" class="postingInput" id="fieldSubject" name="subject">
+      </td>
+    </tr>
+
+    <tr>
+      <th><label for="fieldEmail">E-mail</label></th>
+      <td>
+        <input type="text" class="postingInput" id="fieldEmail" name="email">
+      </td>
+    </tr>
+
+    <tr>
+      <th><label for="fieldMessage">Message</label></th>
+      <td>
+        <textarea rows="5" cols="30" class="postingInput" id="fieldMessage" name="message"></textarea>
+
+        <p>
+          <small>
+            Max message length: <span id="labelMessageLength">20000</span>
+          </small>
+        </p>
+      </td>
+    </tr>
+
+    <tr id="divUpload">
+      <th><label for="inputFiles">Files</label></th>
+      <td>
+        <div id="dragAndDropDiv">
+          <div class="dropzone" id="dropzone">
+            <p>
+              Drag files to upload or <br>
+              click here to select them
+            </p>
+          </div>
+          <div id="selectedDiv"></div>
+        </div>
+
+        <div>
+          <input type="file" name="files" id="inputFiles" multiple="" class="fileBrowser" accept="image/png, image/jpeg, image/gif, image/bmp, video/webm, audio/mpeg, video/mp4, video/ogg, audio/ogg, application/ogg, audio/webm, application/pdf, audio/mp3, audio/mp4, application/x-shockwave-flash, text/plain">
+        </div>
+
+        <p>
+          <small>
+            Maximum <span id="labelMaxFiles">5</span> files /
+            Maximum size: <span id="labelMaxFileSize">20.00 MB</span>
+          </small>
+        </p>
+      </td>
+    </tr>
+
+    
+    <tr>
+      <td>
+	<a href="rules.html" class="rules">Board Rules</a>
+      </td>   
+    </tr>
+  </tbody></table>
+
+  <button type="submit" class="post-submit">Post</button>
+
+  <details class="posting-extra">
+    <summary>
+        More
+    </summary>
+
+    <table id="posting-extra-table">
+      <tbody><tr>
+        <th><label for="checkboxSpoiler">Spoiler images</label></th>
+        <td>
+          <input type="checkbox" name="spoiler" class="postingCheckbox" id="checkboxSpoiler">
+        </td>
+      </tr>
+
+      <tr>
+        <th><label for="fieldPostingPassword">Password</label></th>
+        <td>
+          <input id="fieldPostingPassword" name="password" class="postingInput" type="password">
+          <p>
+            <small>
+              (used to delete files and postings)
+            </small>
+          </p>
+        </td>
+      </tr>
+
+      
+
+      
+
+      <tr class="hidden" id="alwaysUseBypassDiv">
+        <th><label for="alwaysUseBypassCheckBox">Use bypass</label></th>
+        <td>
+          <input type="checkbox" class="postingCheckbox postingInput" id="alwaysUseBypassCheckBox">
+        </td>
+      </tr>
+    </tbody></table>
+  </details>
+
+  <input name="boardUri" id="boardIdentifier" type="hidden" value="film">
+  <input type="hidden" name="threadId" id="threadIdentifier" value="881">
+</div>
+</form>
+
+  
+  
+
+  <div id="transferControls">
+
+    
+
+  </div>
+
+  
+
+  <div id="ipDelete">
+    
+
+  </div>
+
+  <div id="panelMessage">
+    <hr>
+    <div id="divMessage">Welcome to /film/ discussion | Bunker: alogs.space/film</div>
+    <hr>
+  </div>
+
+  <nav class="board-nav" id="board-top-nav" role="navigation">
+    <a class="bracket-button" href="..">Return</a>
+    <a class="bracket-button" href="../catalog.html">Catalog</a>
+    <a class="bracket-button" id="linkBack" href="#footer">Go to Bottom</a>
+  </nav>
+
+  <div id="threadList">
+
+    <form method="post" action="/contentActions.js" enctype="multipart/form-data">
+
+      <div id="divThreads"><div class="opCell" data-boarduri="film" id="881"><hr>
+<div class="innerOP">
+  <div class="panelUploads opUploadPanel multipleUploads"><figure class="uploadCell"><div class="uploadDetails">
+  <a class="nameLink" target="_blank" href="/.media/4cffb5d8b4cc92d08b02f4bac99aa58e5d5546cd48a9822aee9e4942de616a12.jpg">Open file</a>
+  <span class="hideMobile">(</span><span class="sizeLabel">218.08 KB</span> <span class="dimensionLabel">960x1362</span>
+  <a class="originalNameLink" href="/.media/4cffb5d8b4cc92d08b02f4bac99aa58e5d5546cd48a9822aee9e4942de616a12.jpg" download="lolitajp.jpg">lolitajp.jpg</a><span class="hideMobile">)</span>
+</div>
+
+<div>
+  
+  
+</div>
+<a class="imgLink" target="_blank" href="/.media/4cffb5d8b4cc92d08b02f4bac99aa58e5d5546cd48a9822aee9e4942de616a12.jpg" data-filewidth="960" data-fileheight="1362" data-filemime="image/jpeg"><img loading="lazy" src="/.media/t_4cffb5d8b4cc92d08b02f4bac99aa58e5d5546cd48a9822aee9e4942de616a12"></a>
+</figure><figure class="uploadCell"><div class="uploadDetails">
+  <a class="nameLink" target="_blank" href="/.media/1b6ecf7914d29376317a5e4d97c1e0bc8edbacc68f5abaa2cbd861a8e2a336f0.jpg">Open file</a>
+  <span class="hideMobile">(</span><span class="sizeLabel">84.04 KB</span> <span class="dimensionLabel">480x711</span>
+  <a class="originalNameLink" href="/.media/1b6ecf7914d29376317a5e4d97c1e0bc8edbacc68f5abaa2cbd861a8e2a336f0.jpg" download="taxi driver.jpg">taxi driver.jpg</a><span class="hideMobile">)</span>
+</div>
+
+<div>
+  
+  
+</div>
+<a class="imgLink" target="_blank" href="/.media/1b6ecf7914d29376317a5e4d97c1e0bc8edbacc68f5abaa2cbd861a8e2a336f0.jpg" data-filewidth="480" data-fileheight="711" data-filemime="image/jpeg"><img loading="lazy" src="/.media/t_1b6ecf7914d29376317a5e4d97c1e0bc8edbacc68f5abaa2cbd861a8e2a336f0"></a>
+</figure><figure class="uploadCell"><div class="uploadDetails">
+  <a class="nameLink" target="_blank" href="/.media/7df1039ff790ea82cca696d3d2135ab926e5288db516fb215fe74225c558a629.jpg">Open file</a>
+  <span class="hideMobile">(</span><span class="sizeLabel">24.53 KB</span> <span class="dimensionLabel">500x334</span>
+  <a class="originalNameLink" href="/.media/7df1039ff790ea82cca696d3d2135ab926e5288db516fb215fe74225c558a629.jpg" download="exorcist.jpg">exorcist.jpg</a><span class="hideMobile">)</span>
+</div>
+
+<div>
+  
+  
+</div>
+<a class="imgLink" target="_blank" href="/.media/7df1039ff790ea82cca696d3d2135ab926e5288db516fb215fe74225c558a629.jpg" data-filewidth="500" data-fileheight="334" data-filemime="image/jpeg"><img loading="lazy" src="/film/custom.spoiler"></a>
+</figure></div>
+  <div class="opHead title">
+    <input type="checkbox" class="deletionCheckBox" name="film-881">
+    <span class="labelSubject">/lolita/core</span>
+    <a class="linkName  noEmailName" >Anonymous</a>
+      <span class="labelCreated">11/29/2020 (Sun) 07:05:31</span>      
+    <a class="linkSelf" href="#881">No.</a><a class="linkQuote" href="#q881">881</a>
+    
+    
+    
+    
+    
+    
+    <span class="panelBacklinks"></span>
+  </div>
+  
+  
+  <div class="panelIpContainer">
+    
+  </div>
+  <div class="divMessage">Does any visitors of /film/ know of good lolita /film/s?
+
+Discuss films that generated controversy, art and cultural taboos, censorship and legality, the search for youth and beauty, and any other thoughts you have on this topic</div>
+  
+  
+  <div class="labelLastEdit">Edited last time by 11811 on 12/22/2020 (Tue) 01:22:23.</div>
+  
+</div>
+<div class="divPosts"><div class="postCell" data-boarduri="film" id="888"><div class="innerPost">
+  
+  <div class="postInfo title">
+    <input type="checkbox" class="deletionCheckBox" name="film-881-888">
+    
+    <a class="linkName  noEmailName" >Anonymous</a>
+      <span class="labelCreated">11/30/2020 (Mon) 23:08:25</span> 
+    <a class="linkSelf" href="#888">No.</a><a class="linkQuote" href="#q888">888</a>
+    
+    
+    
+    
+    <span class="panelBacklinks"></span>
+  </div>
+  
+  
+  <div>
+    
+  </div>
+  <div class="panelUploads"><figure class="uploadCell"><div class="uploadDetails">
+  <a class="nameLink" target="_blank" href="/.media/9c1ac24710b6d9986fe87ca44b5f97303dd9d70066787570736c9b037282ebf8.jpg">Open file</a>
+  <span class="hideMobile">(</span><span class="sizeLabel">962.21 KB</span> <span class="dimensionLabel">3000x4000</span>
+  <a class="originalNameLink" href="/.media/9c1ac24710b6d9986fe87ca44b5f97303dd9d70066787570736c9b037282ebf8.jpg" download="e1fb8ab19e45828c8b21ae2d061584a0.jpg">e1fb8ab19e45828c8b21ae2d061584a0.jpg</a><span class="hideMobile">)</span>
+</div>
+
+<div>
+  
+  
+</div>
+<a class="imgLink" target="_blank" href="/.media/9c1ac24710b6d9986fe87ca44b5f97303dd9d70066787570736c9b037282ebf8.jpg" data-filewidth="3000" data-fileheight="4000" data-filemime="image/jpeg"><img loading="lazy" src="/.media/t_9c1ac24710b6d9986fe87ca44b5f97303dd9d70066787570736c9b037282ebf8"></a>
+</figure></div>
+  <div class="divMessage">Pretty Baby (1978)</div>
+  
+  
+  
+</div>
+</div><div class="postCell" data-boarduri="film" id="889"><div class="innerPost">
+  
+  <div class="postInfo title">
+    <input type="checkbox" class="deletionCheckBox" name="film-881-889">
+    
+    <a class="linkName  noEmailName" >Anonymous</a>
+      <span class="labelCreated">11/30/2020 (Mon) 23:16:34</span> 
+    <a class="linkSelf" href="#889">No.</a><a class="linkQuote" href="#q889">889</a>
+    
+    
+    
+    
+    <span class="panelBacklinks"></span>
+  </div>
+  
+  
+  <div>
+    
+  </div>
+  <div class="panelUploads multipleUploads"><figure class="uploadCell"><div class="uploadDetails">
+  <a class="nameLink" target="_blank" href="/.media/230c5e4763283c149d360f0e2143f5f8c793460e112457de7048c1bf48be4c94.jpg">Open file</a>
+  <span class="hideMobile">(</span><span class="sizeLabel">729.71 KB</span> <span class="dimensionLabel">1700x1110</span>
+  <a class="originalNameLink" href="/.media/230c5e4763283c149d360f0e2143f5f8c793460e112457de7048c1bf48be4c94.jpg" download="1d5b262d-a630-4d6d-9ce1-dfaafc2046a3.jpg">1d5b262d-a630-4d6d-9ce1-dfaafc2046a3.jpg</a><span class="hideMobile">)</span>
+</div>
+
+<div>
+  
+  
+</div>
+<a class="imgLink" target="_blank" href="/.media/230c5e4763283c149d360f0e2143f5f8c793460e112457de7048c1bf48be4c94.jpg" data-filewidth="1700" data-fileheight="1110" data-filemime="image/jpeg"><img loading="lazy" src="/.media/t_230c5e4763283c149d360f0e2143f5f8c793460e112457de7048c1bf48be4c94"></a>
+</figure><figure class="uploadCell"><div class="uploadDetails">
+  <a class="nameLink" target="_blank" href="/.media/c87d640b6f322785b407a97df5332dd9914af7abcb57a8553e4e5b38076ec199.jpg">Open file</a>
+  <span class="hideMobile">(</span><span class="sizeLabel">11.89 KB</span> <span class="dimensionLabel">240x285</span>
+  <a class="originalNameLink" href="/.media/c87d640b6f322785b407a97df5332dd9914af7abcb57a8553e4e5b38076ec199.jpg" download="image-w240.jpg">image-w240.jpg</a><span class="hideMobile">)</span>
+</div>
+
+<div>
+  
+  
+</div>
+<a class="imgLink" target="_blank" href="/.media/c87d640b6f322785b407a97df5332dd9914af7abcb57a8553e4e5b38076ec199.jpg" data-filewidth="240" data-fileheight="285" data-filemime="image/jpeg"><img loading="lazy" src="/.media/t_c87d640b6f322785b407a97df5332dd9914af7abcb57a8553e4e5b38076ec199"></a>
+</figure></div>
+  <div class="divMessage">Le Sauveur (1971)</div>
+  
+  
+  
+</div>
+</div><div class="postCell" data-boarduri="film" id="890"><div class="innerPost">
+  
+  <div class="postInfo title">
+    <input type="checkbox" class="deletionCheckBox" name="film-881-890">
+    
+    <a class="linkName  noEmailName" >Anonymous</a>
+      <span class="labelCreated">12/01/2020 (Tue) 07:26:09</span> 
+    <a class="linkSelf" href="#890">No.</a><a class="linkQuote" href="#q890">890</a>
+    
+    
+    
+    
+    <span class="panelBacklinks"></span>
+  </div>
+  
+  
+  <div>
+    
+  </div>
+  <div class="panelUploads"><figure class="uploadCell"><div class="uploadDetails">
+  <a class="nameLink" target="_blank" href="/.media/098ae7d9ec458885074b86ccfbab3f77527b1a8a975ed69c43d361ed736004b6.jpg">Open file</a>
+  <span class="hideMobile">(</span><span class="sizeLabel">236.14 KB</span> <span class="dimensionLabel">1200x759</span>
+  <a class="originalNameLink" href="/.media/098ae7d9ec458885074b86ccfbab3f77527b1a8a975ed69c43d361ed736004b6.jpg" download="blue lagoon.jpg">blue lagoon.jpg</a><span class="hideMobile">)</span>
+</div>
+
+<div>
+  
+  
+</div>
+<a class="imgLink" target="_blank" href="/.media/098ae7d9ec458885074b86ccfbab3f77527b1a8a975ed69c43d361ed736004b6.jpg" data-filewidth="1200" data-fileheight="759" data-filemime="image/jpeg"><img loading="lazy" src="/.media/t_098ae7d9ec458885074b86ccfbab3f77527b1a8a975ed69c43d361ed736004b6"></a>
+</figure></div>
+  <div class="divMessage">Blue Lagoon I hear is peak /hebe/ kino.</div>
+  
+  
+  
+</div>
+</div><div class="postCell" data-boarduri="film" id="893"><div class="innerPost">
+  
+  <div class="postInfo title">
+    <input type="checkbox" class="deletionCheckBox" name="film-881-893">
+    
+    <a class="linkName  noEmailName" >Anonymous</a>
+      <span class="labelCreated">12/01/2020 (Tue) 16:58:49</span> 
+    <a class="linkSelf" href="#893">No.</a><a class="linkQuote" href="#q893">893</a>
+    
+    
+    
+    
+    <span class="panelBacklinks"></span>
+  </div>
+  
+  
+  <div>
+    
+  </div>
+  <div class="panelUploads"><figure class="uploadCell"><div class="uploadDetails">
+  <a class="nameLink" target="_blank" href="/.media/ebc2fdd66c0f629c00bb374005950c4b66b377f2c71497ce20271cbf7a5c3ede.jpg">Open file</a>
+  <span class="hideMobile">(</span><span class="sizeLabel">41.13 KB</span> <span class="dimensionLabel">309x449</span>
+  <a class="originalNameLink" href="/.media/ebc2fdd66c0f629c00bb374005950c4b66b377f2c71497ce20271cbf7a5c3ede.jpg" download="linda.jpg">linda.jpg</a><span class="hideMobile">)</span>
+</div>
+
+<div>
+  
+  
+</div>
+<a class="imgLink" target="_blank" href="/.media/ebc2fdd66c0f629c00bb374005950c4b66b377f2c71497ce20271cbf7a5c3ede.jpg" data-filewidth="309" data-fileheight="449" data-filemime="image/jpeg"><img loading="lazy" src="/.media/t_ebc2fdd66c0f629c00bb374005950c4b66b377f2c71497ce20271cbf7a5c3ede"></a>
+</figure></div>
+  <div class="divMessage"><a class="quoteLink" href="/film/res/881.html#888">&gt;&gt;888</a>
+<a class="quoteLink" href="/film/res/881.html#889">&gt;&gt;889</a>
+<a class="quoteLink" href="/film/res/881.html#890">&gt;&gt;890</a>
+Amazing</div>
+  
+  
+  
+</div>
+</div><div class="postCell" data-boarduri="film" id="894"><div class="innerPost">
+  
+  <div class="postInfo title">
+    <input type="checkbox" class="deletionCheckBox" name="film-881-894">
+    
+    <a class="linkName  noEmailName" >Anonymous</a>
+      <span class="labelCreated">12/02/2020 (Wed) 10:54:46</span> 
+    <a class="linkSelf" href="#894">No.</a><a class="linkQuote" href="#q894">894</a>
+    
+    
+    
+    
+    <span class="panelBacklinks"></span>
+  </div>
+  
+  
+  <div>
+    
+  </div>
+  <div class="panelUploads multipleUploads"><figure class="uploadCell"><div class="uploadDetails">
+  <a class="nameLink" target="_blank" href="/.media/84b107cd32b784f7d5a938bc12601cd3d06585d0b8e0bebe1fc692b5c647598c.png">Open file</a>
+  <span class="hideMobile">(</span><span class="sizeLabel">391.52 KB</span> <span class="dimensionLabel">500x432</span>
+  <a class="originalNameLink" href="/.media/84b107cd32b784f7d5a938bc12601cd3d06585d0b8e0bebe1fc692b5c647598c.png" download="1bd45ed647a93b495b7d556cdf369702.png">1bd45ed647a93b495b7d556cdf369702.png</a><span class="hideMobile">)</span>
+</div>
+
+<div>
+  
+  
+</div>
+<a class="imgLink" target="_blank" href="/.media/84b107cd32b784f7d5a938bc12601cd3d06585d0b8e0bebe1fc692b5c647598c.png" data-filewidth="500" data-fileheight="432" data-filemime="image/png"><img loading="lazy" src="/.media/t_84b107cd32b784f7d5a938bc12601cd3d06585d0b8e0bebe1fc692b5c647598c"></a>
+</figure><figure class="uploadCell"><div class="uploadDetails">
+  <a class="nameLink" target="_blank" href="/.media/157322cab1796827af86dff509e93c45d0560835a9fa85b89d57835ff9b9ecde.jpg">Open file</a>
+  <span class="hideMobile">(</span><span class="sizeLabel">43.59 KB</span> <span class="dimensionLabel">750x422</span>
+  <a class="originalNameLink" href="/.media/157322cab1796827af86dff509e93c45d0560835a9fa85b89d57835ff9b9ecde.jpg" download="beau-pre-1fc8a1d8-1c5a-4407-a7f4-b4df3a1f5e3-resize-750.jpg">beau-pre-1fc8a1d8-1c5a-4407-a7f4-b4df3a1f5e3-resize-750.jpg</a><span class="hideMobile">)</span>
+</div>
+
+<div>
+  
+  
+</div>
+<a class="imgLink" target="_blank" href="/.media/157322cab1796827af86dff509e93c45d0560835a9fa85b89d57835ff9b9ecde.jpg" data-filewidth="750" data-fileheight="422" data-filemime="image/jpeg"><img loading="lazy" src="/.media/t_157322cab1796827af86dff509e93c45d0560835a9fa85b89d57835ff9b9ecde"></a>
+</figure><figure class="uploadCell"><div class="uploadDetails">
+  <a class="nameLink" target="_blank" href="/.media/8fea6dae1dd540eaf6a322c84f1e35753da807463c171b499b1f26aeeb46199d.jpg">Open file</a>
+  <span class="hideMobile">(</span><span class="sizeLabel">77.96 KB</span> <span class="dimensionLabel">900x622</span>
+  <a class="originalNameLink" href="/.media/8fea6dae1dd540eaf6a322c84f1e35753da807463c171b499b1f26aeeb46199d.jpg" download="beau-pere-1981-2.jpg">beau-pere-1981-2.jpg</a><span class="hideMobile">)</span>
+</div>
+
+<div>
+  
+  
+</div>
+<a class="imgLink" target="_blank" href="/.media/8fea6dae1dd540eaf6a322c84f1e35753da807463c171b499b1f26aeeb46199d.jpg" data-filewidth="900" data-fileheight="622" data-filemime="image/jpeg"><img loading="lazy" src="/.media/t_8fea6dae1dd540eaf6a322c84f1e35753da807463c171b499b1f26aeeb46199d"></a>
+</figure></div>
+  <div class="divMessage">Beau-père (1981)</div>
+  
+  
+  
+</div>
+</div><div class="postCell" data-boarduri="film" id="1012"><div class="innerPost">
+  
+  <div class="postInfo title">
+    <input type="checkbox" class="deletionCheckBox" name="film-881-1012">
+    
+    <a class="linkName  noEmailName" >Anonymous</a>
+      <span class="labelCreated">12/17/2020 (Thu) 03:32:50</span> 
+    <a class="linkSelf" href="#1012">No.</a><a class="linkQuote" href="#q1012">1012</a>
+    
+    
+    
+    
+    <span class="panelBacklinks"></span>
+  </div>
+  
+  
+  <div>
+    
+  </div>
+  <div class="panelUploads"><figure class="uploadCell"><div class="uploadDetails">
+  <a class="nameLink" target="_blank" href="/.media/541eb6fed49a1331d7f7eb67a2abb16bac969d55ba6f2efe1538ca8743ed6c30.jpg">Open file</a>
+  <span class="hideMobile">(</span><span class="sizeLabel">3.89 MB</span> <span class="dimensionLabel">4520x3146</span>
+  <a class="originalNameLink" href="/.media/541eb6fed49a1331d7f7eb67a2abb16bac969d55ba6f2efe1538ca8743ed6c30.jpg" download="Movies With Girls in Them.jpg">Movies With Girls in Them.jpg</a><span class="hideMobile">)</span>
+</div>
+
+<div>
+  
+  
+</div>
+<a class="imgLink" target="_blank" href="/.media/541eb6fed49a1331d7f7eb67a2abb16bac969d55ba6f2efe1538ca8743ed6c30.jpg" data-filewidth="4520" data-fileheight="3146" data-filemime="image/jpeg"><img loading="lazy" src="/.media/t_541eb6fed49a1331d7f7eb67a2abb16bac969d55ba6f2efe1538ca8743ed6c30"></a>
+</figure></div>
+  <div class="divMessage"><a class="quoteLink" href="/film/res/881.html#881">&gt;&gt;881</a></div>
+  
+  
+  
+</div>
+</div><div class="postCell" data-boarduri="film" id="1015"><div class="innerPost">
+  
+  <div class="postInfo title">
+    <input type="checkbox" class="deletionCheckBox" name="film-881-1015">
+    
+    <a class="linkName  noEmailName" >Anonymous</a>
+      <span class="labelCreated">12/17/2020 (Thu) 04:04:55</span> 
+    <a class="linkSelf" href="#1015">No.</a><a class="linkQuote" href="#q1015">1015</a>
+    
+    
+    
+    
+    <span class="panelBacklinks"></span>
+  </div>
+  
+  
+  <div>
+    
+  </div>
+  
+  <div class="divMessage"><a class="quoteLink" href="/film/res/881.html#1012">&gt;&gt;1012</a>
+I still haven&apos;t been able to locate a copy of <em>The Trouble with Being Born</em> (2020). Any help /film/ ? I&apos;m more interested in the robotics/AI aspect honestly, but the <strong>muh&#95;pedo</strong> hysteria has apparently made the thing hard to locate.</div>
+  
+  
+  
+</div>
+</div><div class="postCell" data-boarduri="film" id="1017"><div class="innerPost">
+  
+  <div class="postInfo title">
+    <input type="checkbox" class="deletionCheckBox" name="film-881-1017">
+    
+    <a class="linkName  noEmailName" >Anonymous</a>
+      <span class="labelCreated">12/17/2020 (Thu) 04:33:31</span> 
+    <a class="linkSelf" href="#1017">No.</a><a class="linkQuote" href="#q1017">1017</a>
+    
+    
+    
+    
+    <span class="panelBacklinks"></span>
+  </div>
+  
+  
+  <div>
+    
+  </div>
+  
+  <div class="divMessage"><a class="quoteLink" href="/film/res/881.html#1015">&gt;&gt;1015</a>
+decode with base 64
+aHR0cHM6Ly9tZWdhLm56L2ZpbGUvSE53V3lhNUIjLUllVy1rcFhJamlMbXROQmI5Uk92Z0RweENzREppb1hpX0RoWlhTSnF5VQ==</div>
+  
+  
+  
+</div>
+</div><div class="postCell" data-boarduri="film" id="1018"><div class="innerPost">
+  
+  <div class="postInfo title">
+    <input type="checkbox" class="deletionCheckBox" name="film-881-1018">
+    
+    <a class="linkName  noEmailName" >Anonymous</a>
+      <span class="labelCreated">12/17/2020 (Thu) 04:42:02</span> 
+    <a class="linkSelf" href="#1018">No.</a><a class="linkQuote" href="#q1018">1018</a>
+    
+    
+    
+    
+    <span class="panelBacklinks"></span>
+  </div>
+  
+  
+  <div>
+    
+  </div>
+  
+  <div class="divMessage"><a class="quoteLink" href="/film/res/881.html#1017">&gt;&gt;1017</a>
+Thanks fam. But any chance you might put it on anonfiles or somewhere open? I don&apos;t have an account on mega and the size forces me to have one to access it.</div>
+  
+  
+  
+</div>
+</div><div class="postCell" data-boarduri="film" id="1019"><div class="innerPost">
+  
+  <div class="postInfo title">
+    <input type="checkbox" class="deletionCheckBox" name="film-881-1019">
+    
+    <a class="linkName  noEmailName" >Anonymous</a>
+      <span class="labelCreated">12/17/2020 (Thu) 04:50:36</span> 
+    <a class="linkSelf" href="#1019">No.</a><a class="linkQuote" href="#q1019">1019</a>
+    
+    
+    
+    
+    <span class="panelBacklinks"></span>
+  </div>
+  
+  
+  <div>
+    
+  </div>
+  
+  <div class="divMessage"><a class="quoteLink" href="/film/res/881.html#1018">&gt;&gt;1018</a>
+Just create an account lol</div>
+  
+  
+  
+</div>
+</div><div class="postCell" data-boarduri="film" id="1020"><div class="innerPost">
+  
+  <div class="postInfo title">
+    <input type="checkbox" class="deletionCheckBox" name="film-881-1020">
+    
+    <a class="linkName  noEmailName" >Anonymous</a>
+      <span class="labelCreated">12/17/2020 (Thu) 04:54:21</span> 
+    <a class="linkSelf" href="#1020">No.</a><a class="linkQuote" href="#q1020">1020</a>
+    
+    
+    
+    
+    <span class="panelBacklinks"></span>
+  </div>
+  
+  
+  <div>
+    
+  </div>
+  
+  <div class="divMessage"><a class="quoteLink" href="/film/res/881.html#1019">&gt;&gt;1019</a>
+No thanks. Just in case you weren&apos;t aware of if Mega got glowniggered a while back.</div>
+  
+  
+  
+</div>
+</div><div class="postCell" data-boarduri="film" id="1021"><div class="innerPost">
+  
+  <div class="postInfo title">
+    <input type="checkbox" class="deletionCheckBox" name="film-881-1021">
+    
+    <a class="linkName  noEmailName" >Anonymous</a>
+      <span class="labelCreated">12/17/2020 (Thu) 05:12:00</span> 
+    <a class="linkSelf" href="#1021">No.</a><a class="linkQuote" href="#q1021">1021</a>
+    
+    
+    
+    
+    <span class="panelBacklinks"></span>
+  </div>
+  
+  
+  <div>
+    
+  </div>
+  
+  <div class="divMessage"><a class="quoteLink" href="/film/res/881.html#1020">&gt;&gt;1020</a>
+Oh, I&apos;m unaware</div>
+  
+  
+  
+</div>
+</div><div class="postCell" data-boarduri="film" id="1022"><div class="innerPost">
+  
+  <div class="postInfo title">
+    <input type="checkbox" class="deletionCheckBox" name="film-881-1022">
+    
+    <a class="linkName " href="mailto:sage">Anonymous</a>
+      <span class="labelCreated">12/17/2020 (Thu) 05:14:41</span> 
+    <a class="linkSelf" href="#1022">No.</a><a class="linkQuote" href="#q1022">1022</a>
+    
+    
+    
+    
+    <span class="panelBacklinks"></span>
+  </div>
+  
+  
+  <div>
+    
+  </div>
+  
+  <div class="divMessage"><a class="quoteLink" href="/film/res/881.html#1021">&gt;&gt;1021</a>
+Sorry I don&apos;t remember the details. It was 4 maybe 5 years back when they got raided/borg&apos;d.</div>
+  
+  
+  
+</div>
+</div><div class="postCell" data-boarduri="film" id="1023"><div class="innerPost">
+  
+  <div class="postInfo title">
+    <input type="checkbox" class="deletionCheckBox" name="film-881-1023">
+    
+    <a class="linkName  noEmailName" >Anonymous</a>
+      <span class="labelCreated">12/17/2020 (Thu) 05:42:18</span> 
+    <a class="linkSelf" href="#1023">No.</a><a class="linkQuote" href="#q1023">1023</a>
+    
+    
+    
+    
+    <span class="panelBacklinks"></span>
+  </div>
+  
+  
+  <div>
+    
+  </div>
+  
+  <div class="divMessage"><a class="quoteLink" href="/film/res/881.html#1018">&gt;&gt;1018</a>
+use Megabasterd to get around the download limit and the need for an account</div>
+  
+  
+  
+</div>
+</div><div class="postCell" data-boarduri="film" id="1024"><div class="innerPost">
+  
+  <div class="postInfo title">
+    <input type="checkbox" class="deletionCheckBox" name="film-881-1024">
+    
+    <a class="linkName  noEmailName" >Anonymous</a>
+      <span class="labelCreated">12/17/2020 (Thu) 05:42:35</span> 
+    <a class="linkSelf" href="#1024">No.</a><a class="linkQuote" href="#q1024">1024</a>
+    
+    
+    
+    
+    <span class="panelBacklinks"></span>
+  </div>
+  
+  
+  <div>
+    
+  </div>
+  
+  <div class="divMessage"><a class="quoteLink" href="/film/res/881.html#1017">&gt;&gt;1017</a>
+Haven&apos;t seen a file so restricted by Mega, no IP allows download of it and even with an account the process of importing and backing it in your own folder requests billing.
+Whoever put the real name of the movie as the file name needs to be given warm flat soda as a reward. Thanks for code tho, appreciate it.</div>
+  
+  
+  
+</div>
+</div><div class="postCell" data-boarduri="film" id="1025"><div class="innerPost">
+  
+  <div class="postInfo title">
+    <input type="checkbox" class="deletionCheckBox" name="film-881-1025">
+    
+    <a class="linkName  noEmailName" >Anonymous</a>
+      <span class="labelCreated">12/17/2020 (Thu) 05:47:14</span> 
+    <a class="linkSelf" href="#1025">No.</a><a class="linkQuote" href="#q1025">1025</a>
+    
+    
+    
+    
+    <span class="panelBacklinks"></span>
+  </div>
+  
+  
+  <div>
+    
+  </div>
+  
+  <div class="divMessage"><a class="quoteLink" href="/film/res/881.html#1024">&gt;&gt;1024</a>
+really? I renamed it now. try this one
+aHR0cHM6Ly9tZWdhLm56L2ZpbGUvWFE0aURLNkojLUllVy1rcFhJamlMbXROQmI5Uk92Z0RweENzREppb1hpX0RoWlhTSnF5VQ==
+if this doesn&apos;t work I&apos;ll reup to anonfiles tomorrow</div>
+  
+  
+  
+</div>
+</div><div class="postCell" data-boarduri="film" id="1027"><div class="innerPost">
+  
+  <div class="postInfo title">
+    <input type="checkbox" class="deletionCheckBox" name="film-881-1027">
+    
+    <a class="linkName " href="mailto:sage">Anonymous</a>
+      <span class="labelCreated">12/17/2020 (Thu) 07:04:57</span> 
+    <a class="linkSelf" href="#1027">No.</a><a class="linkQuote" href="#q1027">1027</a>
+    
+    
+    
+    
+    <span class="panelBacklinks"></span>
+  </div>
+  
+  
+  <div>
+    
+  </div>
+  
+  <div class="divMessage"><a class="quoteLink" href="/film/res/881.html#1025">&gt;&gt;1025</a>
+<span class="greenText">&gt;if this doesn&apos;t work I&apos;ll reup to anonfiles tomorrow</span>
+Yes thanks, pls do. Mega has killed my DL 2/3rds though 4 times now.</div>
+  
+  
+  
+</div>
+</div><div class="postCell" data-boarduri="film" id="1030"><div class="innerPost">
+  
+  <div class="postInfo title">
+    <input type="checkbox" class="deletionCheckBox" name="film-881-1030">
+    
+    <a class="linkName  noEmailName" >Anonymous</a>
+      <span class="labelCreated">12/17/2020 (Thu) 08:46:21</span> 
+    <a class="linkSelf" href="#1030">No.</a><a class="linkQuote" href="#q1030">1030</a>
+    
+    
+    
+    
+    <span class="panelBacklinks"></span>
+  </div>
+  
+  
+  <div>
+    
+  </div>
+  
+  <div class="divMessage"><a class="quoteLink" href="/film/res/881.html#1025">&gt;&gt;1025</a>
+Thank you so much. Much-awaited and appreciated mate.</div>
+  
+  
+  
+</div>
+</div><div class="postCell" data-boarduri="film" id="1033"><div class="innerPost">
+  
+  <div class="postInfo title">
+    <input type="checkbox" class="deletionCheckBox" name="film-881-1033">
+    
+    <a class="linkName  noEmailName" >Anonymous</a>
+      <span class="labelCreated">12/17/2020 (Thu) 17:06:12</span> 
+    <a class="linkSelf" href="#1033">No.</a><a class="linkQuote" href="#q1033">1033</a>
+    
+    
+    
+    
+    <span class="panelBacklinks"></span>
+  </div>
+  
+  
+  <div>
+    
+  </div>
+  
+  <div class="divMessage"><a class="quoteLink" href="/film/res/881.html#1027">&gt;&gt;1027</a>
+<a class="quoteLink" href="/film/res/881.html#1030">&gt;&gt;1030</a>
+I tried uploading the raw video file and a zipped version to anonfiles, but I keep getting a &quot;Server responded with 0 code.&quot; any other ideas?</div>
+  
+  
+  
+</div>
+</div><div class="postCell" data-boarduri="film" id="1034"><div class="innerPost">
+  
+  <div class="postInfo title">
+    <input type="checkbox" class="deletionCheckBox" name="film-881-1034">
+    
+    <a class="linkName  noEmailName" >Anonymous</a>
+      <span class="labelCreated">12/17/2020 (Thu) 19:24:51</span> 
+    <a class="linkSelf" href="#1034">No.</a><a class="linkQuote" href="#q1034">1034</a>
+    
+    
+    
+    
+    <span class="panelBacklinks"></span>
+  </div>
+  
+  
+  <div>
+    
+  </div>
+  
+  <div class="divMessage"><a class="quoteLink" href="/film/res/881.html#1033">&gt;&gt;1033</a>
+Perhaps it means it got coded the hell out of most sites, same with famous cheese pizza files, most hosting servers have code or the file itself as reference to catch anyone uploading them. No kidding most surveillance agencies are the biggest archivists of that kind of thing.
+I would probably add some filler files, zip it with the &quot;create solid archive&quot; and split it in volumes although i think that&apos;s quite some activity for the goodwill, maybe your IP was blocked temporarily so have you tried uploading anything else no matter how tiny? maybe it&apos;s that too. I can try figuring something but i would need the file itself, did you get it in a particular place or did you download it when you still could? we can also try a one-time man-to-man peer-2-peer torrent so you won&apos;t get in more potential trouble, i would be sweating if i realized i couldn&apos;t upload anything in any site.</div>
+  
+  
+  
+</div>
+</div><div class="postCell" data-boarduri="film" id="1035"><div class="innerPost">
+  
+  <div class="postInfo title">
+    <input type="checkbox" class="deletionCheckBox" name="film-881-1035">
+    
+    <a class="linkName  noEmailName" >Anonymous</a>
+      <span class="labelCreated">12/17/2020 (Thu) 20:01:24</span> 
+    <a class="linkSelf" href="#1035">No.</a><a class="linkQuote" href="#q1035">1035</a>
+    
+    
+    
+    
+    <span class="panelBacklinks"></span>
+  </div>
+  
+  
+  <div>
+    
+  </div>
+  
+  <div class="divMessage"><a class="quoteLink" href="/film/res/881.html#1034">&gt;&gt;1034</a>
+I downloaded it yesterday from the mega link I shared. It was just sitting in my mega folder before that. I was just able to upload a picture to anonfiles, so I don&apos;t think it&apos;s my IP. I&apos;ll try to split it up or something when I get the time</div>
+  
+  
+  
+</div>
+</div><div class="postCell" data-boarduri="film" id="1041"><div class="innerPost">
+  
+  <div class="postInfo title">
+    <input type="checkbox" class="deletionCheckBox" name="film-881-1041">
+    
+    <a class="linkName " href="mailto:sage">Anonymous</a>
+      <span class="labelCreated">12/18/2020 (Fri) 08:12:22</span> 
+    <a class="linkSelf" href="#1041">No.</a><a class="linkQuote" href="#q1041">1041</a>
+    
+    
+    
+    
+    <span class="panelBacklinks"></span>
+  </div>
+  
+  
+  <div>
+    
+  </div>
+  
+  <div class="divMessage">Why is this blatant pedoshit allowed here BO?  This image <a class="quoteLink" href="/film/res/881.html#1012">&gt;&gt;1012</a> is straight from cuckchan for example.</div>
+  
+  
+  
+</div>
+</div><div class="postCell" data-boarduri="film" id="1042"><div class="innerPost">
+  
+  <div class="postInfo title">
+    <input type="checkbox" class="deletionCheckBox" name="film-881-1042">
+    
+    <a class="linkName  noEmailName" >Anonymous</a>
+      <span class="labelCreated">12/18/2020 (Fri) 09:43:43</span> 
+    <a class="linkSelf" href="#1042">No.</a><a class="linkQuote" href="#q1042">1042</a>
+    
+    
+    
+    
+    <span class="panelBacklinks"></span>
+  </div>
+  
+  
+  <div>
+    
+  </div>
+  
+  <div class="divMessage">It&apos;s rather creepy when someone actively seeks films with underage girls to watch.
+Though, young girl old man relationship seems to be a recurrent theme in many films so a thread about it could be fine imo.</div>
+  
+  
+  
+</div>
+</div><div class="postCell" data-boarduri="film" id="1043"><div class="innerPost">
+  
+  <div class="postInfo title">
+    <input type="checkbox" class="deletionCheckBox" name="film-881-1043">
+    
+    <a class="linkName " href="mailto:sage">Anonymous</a>
+      <span class="labelCreated">12/18/2020 (Fri) 17:44:23</span> 
+    <a class="linkSelf" href="#1043">No.</a><a class="linkQuote" href="#q1043">1043</a>
+    
+    
+    
+    
+    <span class="panelBacklinks"></span>
+  </div>
+  
+  
+  <div>
+    
+  </div>
+  
+  <div class="divMessage"><a class="quoteLink" href="/film/res/881.html#1041">&gt;&gt;1041</a>
+<a class="quoteLink" href="/film/res/881.html#1042">&gt;&gt;1042</a>
+<span class="greenText">&gt;creepy</span>
+<span class="greenText">&gt;blatant pedoshit</span>
+Did you guys just blow in from pleb town? it&apos;s just an everyday taboo topic portrayed in an interesting way like most other movies try to do, no one is getting railed in any of the previews and i doubt any of these contain an explicit scene. 
+Might as well cast a doubt on gory action movies and their watchers.</div>
+  
+  
+  
+</div>
+</div><div class="postCell" data-boarduri="film" id="1044"><div class="innerPost">
+  
+  <div class="postInfo title">
+    <input type="checkbox" class="deletionCheckBox" name="film-881-1044">
+    
+    <a class="linkName  noEmailName" >Anonymous</a>
+      <span class="labelCreated">12/18/2020 (Fri) 17:46:59</span> 
+    <a class="linkSelf" href="#1044">No.</a><a class="linkQuote" href="#q1044">1044</a>
+    
+    
+    
+    
+    <span class="panelBacklinks"></span>
+  </div>
+  
+  
+  <div>
+    
+  </div>
+  
+  <div class="divMessage"><a class="quoteLink" href="/film/res/881.html#1041">&gt;&gt;1041</a>
+<a class="quoteLink" href="/film/res/881.html#1042">&gt;&gt;1042</a>
+<a href="/reddit/">&gt;&gt;&gt;/reddit/</a></div>
+  
+  
+  
+</div>
+</div><div class="postCell" data-boarduri="film" id="1045"><div class="innerPost">
+  
+  <div class="postInfo title">
+    <input type="checkbox" class="deletionCheckBox" name="film-881-1045">
+    
+    <a class="linkName  noEmailName" >Anonymous</a>
+      <span class="labelCreated">12/18/2020 (Fri) 23:43:49</span> 
+    <a class="linkSelf" href="#1045">No.</a><a class="linkQuote" href="#q1045">1045</a>
+    
+    
+    
+    
+    <span class="panelBacklinks"></span>
+  </div>
+  
+  
+  <div>
+    
+  </div>
+  
+  <div class="divMessage"><a class="quoteLink" href="/film/res/881.html#1044">&gt;&gt;1044</a>
+Go back to cuckchan</div>
+  
+  
+  
+</div>
+</div><div class="postCell" data-boarduri="film" id="1046"><div class="innerPost">
+  
+  <div class="postInfo title">
+    <input type="checkbox" class="deletionCheckBox" name="film-881-1046">
+    
+    <a class="linkName  noEmailName" >Anonymous</a>
+     <span class="labelRole">Board owner</span> <span class="labelCreated">12/19/2020 (Sat) 00:37:20</span> 
+    <a class="linkSelf" href="#1046">No.</a><a class="linkQuote" href="#q1046">1046</a>
+    
+    
+    
+    
+    <span class="panelBacklinks"></span>
+  </div>
+  
+  
+  <div>
+    
+  </div>
+  
+  <div class="divMessage">Meta horseshit intermezzo <a class="quoteLink" href="/film/res/1.html#1057">&gt;&gt;1057</a>
+Keep in mind this is /film/ and not /hebe/</div>
+  
+  
+  <div class="labelLastEdit">Edited last time by 11811 on 12/22/2020 (Tue) 01:15:07.</div>
+</div>
+</div><div class="postCell" data-boarduri="film" id="1083"><div class="innerPost">
+  
+  <div class="postInfo title">
+    <input type="checkbox" class="deletionCheckBox" name="film-881-1083">
+    
+    <a class="linkName  noEmailName" >Anonymous</a>
+      <span class="labelCreated">12/22/2020 (Tue) 04:33:40</span> 
+    <a class="linkSelf" href="#1083">No.</a><a class="linkQuote" href="#q1083">1083</a>
+    
+    
+    
+    
+    <span class="panelBacklinks"></span>
+  </div>
+  
+  
+  <div>
+    
+  </div>
+  
+  <div class="divMessage">thread unlocked?</div>
+  
+  
+  
+</div>
+</div><div class="postCell" data-boarduri="film" id="1084"><div class="innerPost">
+  
+  <div class="postInfo title">
+    <input type="checkbox" class="deletionCheckBox" name="film-881-1084">
+    
+    <a class="linkName  noEmailName" >Anonymous</a>
+      <span class="labelCreated">12/22/2020 (Tue) 04:49:01</span> 
+    <a class="linkSelf" href="#1084">No.</a><a class="linkQuote" href="#q1084">1084</a>
+    
+    
+    
+    
+    <span class="panelBacklinks"></span>
+  </div>
+  
+  
+  <div>
+    
+  </div>
+  
+  <div class="divMessage">Noice, we’re back</div>
+  
+  
+  
+</div>
+</div><div class="postCell" data-boarduri="film" id="1085"><div class="innerPost">
+  
+  <div class="postInfo title">
+    <input type="checkbox" class="deletionCheckBox" name="film-881-1085">
+    
+    <a class="linkName  noEmailName" >Anonymous</a>
+      <span class="labelCreated">12/22/2020 (Tue) 05:02:01</span> 
+    <a class="linkSelf" href="#1085">No.</a><a class="linkQuote" href="#q1085">1085</a>
+    
+    
+    
+    
+    <span class="panelBacklinks"></span>
+  </div>
+  
+  
+  <div>
+    
+  </div>
+  
+  <div class="divMessage"><a class="quoteLink" href="/film/res/881.html#1084">&gt;&gt;1084</a>
+Great, more of this  shitty thread.</div>
+  
+  
+  
+</div>
+</div><div class="postCell" data-boarduri="film" id="1088"><div class="innerPost">
+  
+  <div class="postInfo title">
+    <input type="checkbox" class="deletionCheckBox" name="film-881-1088">
+    
+    <a class="linkName  noEmailName" >italodisco</a>
+      <span class="labelCreated">12/22/2020 (Tue) 07:41:46</span> 
+    <a class="linkSelf" href="#1088">No.</a><a class="linkQuote" href="#q1088">1088</a>
+    
+    
+    
+    
+    <span class="panelBacklinks"></span>
+  </div>
+  
+  
+  <div>
+    
+  </div>
+  
+  <div class="divMessage">eewwww</div>
+  
+  
+  
+</div>
+</div><div class="postCell" data-boarduri="film" id="1092"><div class="innerPost">
+  
+  <div class="postInfo title">
+    <input type="checkbox" class="deletionCheckBox" name="film-881-1092">
+    
+    <a class="linkName  noEmailName" >Anonymous</a>
+      <span class="labelCreated">12/22/2020 (Tue) 08:30:45</span> 
+    <a class="linkSelf" href="#1092">No.</a><a class="linkQuote" href="#q1092">1092</a>
+    
+    
+    
+    
+    <span class="panelBacklinks"></span>
+  </div>
+  
+  
+  <div>
+    
+  </div>
+  <div class="panelUploads"><figure class="uploadCell"><div class="uploadDetails">
+  <a class="nameLink" target="_blank" href="/.media/980cab0b1e5987886485ed57a9740971cc7b2a79f97d8ad700cb2f67d5fea22e.jpg">Open file</a>
+  <span class="hideMobile">(</span><span class="sizeLabel">778.52 KB</span> <span class="dimensionLabel">2000x1270</span>
+  <a class="originalNameLink" href="/.media/980cab0b1e5987886485ed57a9740971cc7b2a79f97d8ad700cb2f67d5fea22e.jpg" download="peter-weir-on-set-.jpg">peter-weir-on-set-.jpg</a><span class="hideMobile">)</span>
+</div>
+
+<div>
+  
+  
+</div>
+<a class="imgLink" target="_blank" href="/.media/980cab0b1e5987886485ed57a9740971cc7b2a79f97d8ad700cb2f67d5fea22e.jpg" data-filewidth="2000" data-fileheight="1270" data-filemime="image/jpeg"><img loading="lazy" src="/.media/t_980cab0b1e5987886485ed57a9740971cc7b2a79f97d8ad700cb2f67d5fea22e"></a>
+</figure></div>
+  <div class="divMessage"><a class="quoteLink" href="/film/res/881.html#1084">&gt;&gt;1084</a>
+We are indeed, having seen that oddly-named chart (i suppose it&apos;s a halfchan thing) i&apos;m surprised to realize i have not seen many of Peter Weir&apos;s work, ashamed to admit i have only seen <em>Dead Poets Society</em> and it&apos;s only because one of my stinking commie female friends recommended it to me and i don&apos;t recall much of it.
+Is <em>Picnic</em> a good start? his first one is a low-budget horror movie which is either hated or loved so the other one seems like a decent choice.
+<a class="quoteLink" href="/film/res/881.html#1085">&gt;&gt;1085</a>
+Eat our shorts, pal</div>
+  
+  
+  
+</div>
+</div><div class="postCell" data-boarduri="film" id="1094"><div class="innerPost">
+  
+  <div class="postInfo title">
+    <input type="checkbox" class="deletionCheckBox" name="film-881-1094">
+    
+    <a class="linkName  noEmailName" >Anonymous</a>
+      <span class="labelCreated">12/22/2020 (Tue) 09:09:58</span> 
+    <a class="linkSelf" href="#1094">No.</a><a class="linkQuote" href="#q1094">1094</a>
+    
+    
+    
+    
+    <span class="panelBacklinks"></span>
+  </div>
+  
+  
+  <div>
+    
+  </div>
+  
+  <div class="divMessage">For a secondary reference to this topic, The Trial of Mike Diana is an intriguing but deeply flawed documentary that covers topics such as the difference between art and pornography.
+I think the documentary failed partially because Diana was absolutely a pervert. In interviews, exclusively conducted within the loose &apos;90s scene that he was involved with, he basically talked about how he knew his drawing would work for his audience if it made him hard while he was sketching. 
+I think that the only reason he was taken note of was because the majority of his drawings involved kids.</div>
+  
+  
+  
+</div>
+</div><div class="postCell" data-boarduri="film" id="1117"><div class="innerPost">
+  
+  <div class="postInfo title">
+    <input type="checkbox" class="deletionCheckBox" name="film-881-1117">
+    
+    <a class="linkName  noEmailName" >Anonymous</a>
+      <span class="labelCreated">12/23/2020 (Wed) 23:46:02</span> 
+    <a class="linkSelf" href="#1117">No.</a><a class="linkQuote" href="#q1117">1117</a>
+    
+    
+    
+    
+    <span class="panelBacklinks"></span>
+  </div>
+  
+  
+  <div>
+    
+  </div>
+  <div class="panelUploads"><figure class="uploadCell"><div class="uploadDetails">
+  <a class="nameLink" target="_blank" href="/.media/aa1988a9eee071a58d80fcb6393c5c55996e4d256b642c1a8e52bdafe9297c3f.mp4">Open file</a>
+  <span class="hideMobile">(</span><span class="sizeLabel">16.03 MB</span> <span class="dimensionLabel">1280x720</span>
+  <a class="originalNameLink" href="/.media/aa1988a9eee071a58d80fcb6393c5c55996e4d256b642c1a8e52bdafe9297c3f.mp4" download="Picnic.At.Hanging.Rock.1975.Dc.720P.Bluray.X264.mp4">Picnic.At.Hanging.Rock.1975.Dc.720P.Bluray.X264.mp4</a><span class="hideMobile">)</span>
+</div>
+
+<div>
+  
+  
+</div>
+<a class="imgLink" target="_blank" href="/.media/aa1988a9eee071a58d80fcb6393c5c55996e4d256b642c1a8e52bdafe9297c3f.mp4" data-filewidth="1280" data-fileheight="720" data-filemime="video/mp4"><img loading="lazy" src="/.media/t_aa1988a9eee071a58d80fcb6393c5c55996e4d256b642c1a8e52bdafe9297c3f"></a>
+</figure></div>
+  <div class="divMessage"><a class="quoteLink" href="/film/res/881.html#1092">&gt;&gt;1092</a>
+<span class="greenText">&gt;Is Picnic a good start?</span>
+I love it. I can&apos;t think of a better film to convey elusive, ethereal beauty.
+
+I watched a few other Peter Weir films hoping they&apos;d have the same magic as Picnic at Hanging Rock. The films are decent but simply not on the same level. The Last Wave and The Plumber both have themes of &quot;civilized&quot; bougies clashing with brutes, the former with mystical Abbos and the latter with a malevolent tradesman.</div>
+  
+  
+  
+</div>
+</div><div class="postCell" data-boarduri="film" id="1118"><div class="innerPost">
+  
+  <div class="postInfo title">
+    <input type="checkbox" class="deletionCheckBox" name="film-881-1118">
+    
+    <a class="linkName  noEmailName" >Anonymous</a>
+      <span class="labelCreated">12/24/2020 (Thu) 02:30:49</span> 
+    <a class="linkSelf" href="#1118">No.</a><a class="linkQuote" href="#q1118">1118</a>
+    
+    
+    
+    
+    <span class="panelBacklinks"></span>
+  </div>
+  
+  
+  <div>
+    
+  </div>
+  
+  <div class="divMessage">What a disgusting thread. Consider suicide, pedophiles.</div>
+  
+  
+  
+</div>
+</div><div class="postCell" data-boarduri="film" id="1119"><div class="innerPost">
+  
+  <div class="postInfo title">
+    <input type="checkbox" class="deletionCheckBox" name="film-881-1119">
+    
+    <a class="linkName  noEmailName" >Anonymous</a>
+      <span class="labelCreated">12/24/2020 (Thu) 02:41:40</span> 
+    <a class="linkSelf" href="#1119">No.</a><a class="linkQuote" href="#q1119">1119</a>
+    
+    
+    
+    
+    <span class="panelBacklinks"></span>
+  </div>
+  
+  
+  <div>
+    
+  </div>
+  <div class="panelUploads"><figure class="uploadCell"><div class="uploadDetails">
+  <a class="nameLink" target="_blank" href="/.media/0bd2a7f201c7fde9082afd48912ac188c81f0c9840e09c7e83937a4a63d75bfa.png">Open file</a>
+  <span class="hideMobile">(</span><span class="sizeLabel">19.13 KB</span> <span class="dimensionLabel">261x215</span>
+  <a class="originalNameLink" href="/.media/0bd2a7f201c7fde9082afd48912ac188c81f0c9840e09c7e83937a4a63d75bfa.png" download="soy cry.png">soy cry.png</a><span class="hideMobile">)</span>
+</div>
+
+<div>
+  
+  
+</div>
+<a class="imgLink" target="_blank" href="/.media/0bd2a7f201c7fde9082afd48912ac188c81f0c9840e09c7e83937a4a63d75bfa.png" data-filewidth="261" data-fileheight="215" data-filemime="image/png"><img loading="lazy" src="/.media/t_0bd2a7f201c7fde9082afd48912ac188c81f0c9840e09c7e83937a4a63d75bfa"></a>
+</figure></div>
+  <div class="divMessage"><a class="quoteLink" href="/film/res/881.html#1118">&gt;&gt;1118</a>
+<span class="greenText">&gt;What a disgusting thread. Consider suicide, pedophiles.</span></div>
+  
+  
+  
+</div>
+</div><div class="postCell" data-boarduri="film" id="1120"><div class="innerPost">
+  
+  <div class="postInfo title">
+    <input type="checkbox" class="deletionCheckBox" name="film-881-1120">
+    
+    <a class="linkName  noEmailName" >Anonymous</a>
+      <span class="labelCreated">12/24/2020 (Thu) 04:42:04</span> 
+    <a class="linkSelf" href="#1120">No.</a><a class="linkQuote" href="#q1120">1120</a>
+    
+    
+    
+    
+    <span class="panelBacklinks"></span>
+  </div>
+  
+  
+  <div>
+    
+  </div>
+  
+  <div class="divMessage"><a class="quoteLink" href="/film/res/881.html#1118">&gt;&gt;1118</a>
+What&apos;s your point</div>
+  
+  
+  
+</div>
+</div><div class="postCell" data-boarduri="film" id="1121"><div class="innerPost">
+  
+  <div class="postInfo title">
+    <input type="checkbox" class="deletionCheckBox" name="film-881-1121">
+    
+    <a class="linkName " href="mailto:sage">Anonymous</a>
+      <span class="labelCreated">12/24/2020 (Thu) 05:40:07</span> 
+    <a class="linkSelf" href="#1121">No.</a><a class="linkQuote" href="#q1121">1121</a>
+    
+    
+    
+    
+    <span class="panelBacklinks"></span>
+  </div>
+  
+  
+  <div>
+    
+  </div>
+  
+  <div class="divMessage"><a class="quoteLink" href="/film/res/881.html#1120">&gt;&gt;1120</a>
+<span class="greenText">&gt;being this new</span>
+<a href="/lebbit/">&gt;&gt;&gt;/lebbit/</a></div>
+  
+  
+  
+</div>
+</div><div class="postCell" data-boarduri="film" id="1122"><div class="innerPost">
+  
+  <div class="postInfo title">
+    <input type="checkbox" class="deletionCheckBox" name="film-881-1122">
+    
+    <a class="linkName  noEmailName" >Anonymous</a>
+      <span class="labelCreated">12/24/2020 (Thu) 05:51:31</span> 
+    <a class="linkSelf" href="#1122">No.</a><a class="linkQuote" href="#q1122">1122</a>
+    
+    
+    
+    
+    <span class="panelBacklinks"></span>
+  </div>
+  
+  
+  <div>
+    
+  </div>
+  
+  <div class="divMessage"><a class="quoteLink" href="/film/res/881.html#1121">&gt;&gt;1121</a>
+Are you okay there? are you a bot?</div>
+  
+  
+  
+</div>
+</div><div class="postCell" data-boarduri="film" id="1124"><div class="innerPost">
+  
+  <div class="postInfo title">
+    <input type="checkbox" class="deletionCheckBox" name="film-881-1124">
+    
+    <a class="linkName  noEmailName" >Anonymous</a>
+      <span class="labelCreated">12/24/2020 (Thu) 06:04:39</span> 
+    <a class="linkSelf" href="#1124">No.</a><a class="linkQuote" href="#q1124">1124</a>
+    
+    
+    
+    
+    <span class="panelBacklinks"></span>
+  </div>
+  
+  
+  <div>
+    
+  </div>
+  <div class="panelUploads"><figure class="uploadCell"><div class="uploadDetails">
+  <a class="nameLink" target="_blank" href="/.media/d02b3f788de33c208faf5f9aec4023af97f368fe3f47fe21ae12b6f006b3c641.jpg">Open file</a>
+  <span class="hideMobile">(</span><span class="sizeLabel">50.10 KB</span> <span class="dimensionLabel">600x579</span>
+  <a class="originalNameLink" href="/.media/d02b3f788de33c208faf5f9aec4023af97f368fe3f47fe21ae12b6f006b3c641.jpg" download="9BBC846F-C1D7-460F-BC6E-2D91EF89650A.jpeg">9BBC846F-C1D7-460F-BC6E-2D91EF89650A.jpeg</a><span class="hideMobile">)</span>
+</div>
+
+<div>
+  
+  
+</div>
+<a class="imgLink" target="_blank" href="/.media/d02b3f788de33c208faf5f9aec4023af97f368fe3f47fe21ae12b6f006b3c641.jpg" data-filewidth="600" data-fileheight="579" data-filemime="image/jpeg"><img loading="lazy" src="/.media/t_d02b3f788de33c208faf5f9aec4023af97f368fe3f47fe21ae12b6f006b3c641"></a>
+</figure></div>
+  <div class="divMessage">I’m gonna have to watch some /lolicore/ over Christmas just to know that some Redditors are seething over the kino I will be absorbing</div>
+  
+  
+  
+</div>
+</div><div class="postCell" data-boarduri="film" id="1239"><div class="innerPost">
+  
+  <div class="postInfo title">
+    <input type="checkbox" class="deletionCheckBox" name="film-881-1239">
+    
+    <a class="linkName  noEmailName" >Anonymous</a>
+      <span class="labelCreated">01/01/2021 (Fri) 23:28:27</span> 
+    <a class="linkSelf" href="#1239">No.</a><a class="linkQuote" href="#q1239">1239</a>
+    
+    
+    
+    
+    <span class="panelBacklinks"></span>
+  </div>
+  
+  
+  <div>
+    
+  </div>
+  
+  <div class="divMessage"><a class="quoteLink" href="/film/res/881.html#1035">&gt;&gt;1035</a>
+Have you had a chance to watch it?
+This is a rare movie where I at first did not care for it but as I thought more about it, I appreciated it a lot. I&apos;m sure many will compare it to AI, and while there are striking similarities (lonely, affluent people living in ugly, mundane smart-houses who choose to buy children androids) this movie goes into territory that resonates with me a lot more. While AI was very focused on David and his selfish wish fulfillment, this movie has an ultimately far more hopeful conclusion. <span class="spoiler">In an ironic image, the android girl wears an oversized sweater that says &quot;Nature is the Future&quot; I think that this movie ultimately is concluding that the android relationship cannot and will never be an adequate surrogate for human interaction. I think this is also why the father ends up having sexual relations with the android, because of his extreme dissatisfaction with the relationship, he ends up exploring more perverted and unnatural outlets with it in order to find fulfillment. But of course, he will never find replacement for his real daughter who died ten years prior to the film&apos;s events. Basically, this movie is very critical of synthetic proxies unlike AI, which could be construed either way.</span> I think it&apos;s worth a viewing, even with its rocky faults.</div>
+  
+  
+  
+</div>
+</div><div class="postCell" data-boarduri="film" id="1241"><div class="innerPost">
+  
+  <div class="postInfo title">
+    <input type="checkbox" class="deletionCheckBox" name="film-881-1241">
+    
+    <a class="linkName  noEmailName" >Anonymous</a>
+      <span class="labelCreated">01/02/2021 (Sat) 01:28:45</span> 
+    <a class="linkSelf" href="#1241">No.</a><a class="linkQuote" href="#q1241">1241</a>
+    
+    
+    
+    
+    <span class="panelBacklinks"></span>
+  </div>
+  
+  
+  <div>
+    
+  </div>
+  <div class="panelUploads multipleUploads"><figure class="uploadCell"><div class="uploadDetails">
+  <a class="nameLink" target="_blank" href="/.media/fbf77fc0cd7f86440e1008f6adc3d51f78e4a6e727d6962cc6eee8cfdc6ca645.png">Open file</a>
+  <span class="hideMobile">(</span><span class="sizeLabel">644.25 KB</span> <span class="dimensionLabel">1024x552</span>
+  <a class="originalNameLink" href="/.media/fbf77fc0cd7f86440e1008f6adc3d51f78e4a6e727d6962cc6eee8cfdc6ca645.png" download="thelover.png">thelover.png</a><span class="hideMobile">)</span>
+</div>
+
+<div>
+  
+  
+</div>
+<a class="imgLink" target="_blank" href="/.media/fbf77fc0cd7f86440e1008f6adc3d51f78e4a6e727d6962cc6eee8cfdc6ca645.png" data-filewidth="1024" data-fileheight="552" data-filemime="image/png"><img loading="lazy" src="/.media/t_fbf77fc0cd7f86440e1008f6adc3d51f78e4a6e727d6962cc6eee8cfdc6ca645"></a>
+</figure><figure class="uploadCell"><div class="uploadDetails">
+  <a class="nameLink" target="_blank" href="/.media/20ed50c9c947ab40e84f73c03a914d9113257b3ceffb2571d3862a22de3f1b52.jpg">Open file</a>
+  <span class="hideMobile">(</span><span class="sizeLabel">85.28 KB</span> <span class="dimensionLabel">720x559</span>
+  <a class="originalNameLink" href="/.media/20ed50c9c947ab40e84f73c03a914d9113257b3ceffb2571d3862a22de3f1b52.jpg" download="maid in sweden.jpg">maid in sweden.jpg</a><span class="hideMobile">)</span>
+</div>
+
+<div>
+  
+  
+</div>
+<a class="imgLink" target="_blank" href="/.media/20ed50c9c947ab40e84f73c03a914d9113257b3ceffb2571d3862a22de3f1b52.jpg" data-filewidth="720" data-fileheight="559" data-filemime="image/jpeg"><img loading="lazy" src="/.media/t_20ed50c9c947ab40e84f73c03a914d9113257b3ceffb2571d3862a22de3f1b52"></a>
+</figure><figure class="uploadCell"><div class="uploadDetails">
+  <a class="nameLink" target="_blank" href="/.media/4b385d7b3eace4fa920694acb4bd98dd725045182c793d8e8ccbcb4489bed320.png">Open file</a>
+  <span class="hideMobile">(</span><span class="sizeLabel">1.11 MB</span> <span class="dimensionLabel">1208x720</span>
+  <a class="originalNameLink" href="/.media/4b385d7b3eace4fa920694acb4bd98dd725045182c793d8e8ccbcb4489bed320.png" download="bilitis.png">bilitis.png</a><span class="hideMobile">)</span>
+</div>
+
+<div>
+  
+  
+</div>
+<a class="imgLink" target="_blank" href="/.media/4b385d7b3eace4fa920694acb4bd98dd725045182c793d8e8ccbcb4489bed320.png" data-filewidth="1208" data-fileheight="720" data-filemime="image/png"><img loading="lazy" src="/.media/t_4b385d7b3eace4fa920694acb4bd98dd725045182c793d8e8ccbcb4489bed320"></a>
+</figure><figure class="uploadCell"><div class="uploadDetails">
+  <a class="nameLink" target="_blank" href="/.media/bd97d568759dfebb75ac2e5b39b15d684ec0e7b6beb2bd2b8157db89a082ef61.jpg">Open file</a>
+  <span class="hideMobile">(</span><span class="sizeLabel">15.21 KB</span> <span class="dimensionLabel">710x384</span>
+  <a class="originalNameLink" href="/.media/bd97d568759dfebb75ac2e5b39b15d684ec0e7b6beb2bd2b8157db89a082ef61.jpg" download="twinky.jpg">twinky.jpg</a><span class="hideMobile">)</span>
+</div>
+
+<div>
+  
+  
+</div>
+<a class="imgLink" target="_blank" href="/.media/bd97d568759dfebb75ac2e5b39b15d684ec0e7b6beb2bd2b8157db89a082ef61.jpg" data-filewidth="710" data-fileheight="384" data-filemime="image/jpeg"><img loading="lazy" src="/.media/t_bd97d568759dfebb75ac2e5b39b15d684ec0e7b6beb2bd2b8157db89a082ef61"></a>
+</figure><figure class="uploadCell"><div class="uploadDetails">
+  <a class="nameLink" target="_blank" href="/.media/41963c6a09f9dc06ccdf19c0964c339e04ef4182b1f2104b445a2edde9f93fc6.png">Open file</a>
+  <span class="hideMobile">(</span><span class="sizeLabel">1.17 MB</span> <span class="dimensionLabel">1024x576</span>
+  <a class="originalNameLink" href="/.media/41963c6a09f9dc06ccdf19c0964c339e04ef4182b1f2104b445a2edde9f93fc6.png" download="faro.png">faro.png</a><span class="hideMobile">)</span>
+</div>
+
+<div>
+  
+  
+</div>
+<a class="imgLink" target="_blank" href="/.media/41963c6a09f9dc06ccdf19c0964c339e04ef4182b1f2104b445a2edde9f93fc6.png" data-filewidth="1024" data-fileheight="576" data-filemime="image/png"><img loading="lazy" src="/.media/t_41963c6a09f9dc06ccdf19c0964c339e04ef4182b1f2104b445a2edde9f93fc6"></a>
+</figure></div>
+  <div class="divMessage">A few more that fit OP request. 
+
+<em>L&apos;amant</em> AKA <em>The Lover</em> (1992) directed by Jean-Jacques Annaud, novel by Marguerite Duras. Probably the best film of the bunch because of the quality production and period location of French Indochina. I watched half of it years ago before I knew anything about Duras. I&apos;m interested to revisit because I think her films can be too wordy.
+
+<em>Maid in Sweden</em> (1971) with Christina Lindberg. Amazing tits, mediocre film.
+
+<em>Bilitis</em> (1977 ) David Hamilton&apos;s most well-known film. I&apos;m surprised it&apos;s not on the infamous chart? You could add A Summer in St. Tropez too. That one is essentially a dreamy music video with no plot (only available in shitty VHS quality).
+
+<em>Twinky</em> (1970) directed by Richard Donner, with Charles Bronson and Susan George. I only know this one from the extremely catchy theme tune - <a target="&#95;blank" href="https://www.youtube.com/watch?v&#61;i7jRgV9lP-o">https://www.youtube.com/watch?v&#61;i7jRgV9lP-o</a> Reminds me when you date a younger girl you have to put up with her juvenile bullshit.
+
+<em>Le farò da padre</em> (1974) with Theresa Ann Savoy. No english subtitles. I haven&apos;t seen it but noticed it while browsing Italian exploitation films and remembered this thread.</div>
+  
+  
+  
+</div>
+</div><div class="postCell" data-boarduri="film" id="2640"><div class="innerPost">
+  
+  <div class="postInfo title">
+    <input type="checkbox" class="deletionCheckBox" name="film-881-2640">
+    
+    <a class="linkName  noEmailName" >Anonymous</a>
+      <span class="labelCreated">07/29/2022 (Fri) 12:06:37</span> 
+    <a class="linkSelf" href="#2640">No.</a><a class="linkQuote" href="#q2640">2640</a>
+    
+    
+    
+    
+    <span class="panelBacklinks"></span>
+  </div>
+  
+  
+  <div>
+    
+  </div>
+  
+  <div class="divMessage"><a class="quoteLink" href="/film/res/881.html#893">&gt;&gt;893</a></div>
+  
+  
+  
+</div>
+</div><div class="postCell" data-boarduri="film" id="2714"><div class="innerPost">
+  
+  <div class="postInfo title">
+    <input type="checkbox" class="deletionCheckBox" name="film-881-2714">
+    
+    <a class="linkName " href="mailto:sage">Anonymous</a>
+      <span class="labelCreated">09/07/2022 (Wed) 13:42:14</span> 
+    <a class="linkSelf" href="#2714">No.</a><a class="linkQuote" href="#q2714">2714</a>
+    
+    
+    
+    
+    <span class="panelBacklinks"></span>
+  </div>
+  
+  
+  <div>
+    
+  </div>
+  <div class="panelUploads multipleUploads"><figure class="uploadCell"><div class="uploadDetails">
+  <a class="nameLink" target="_blank" href="/.media/9d43d81b49fbc280f02ab52ff041c3a6277655b7f28fc4f943fbd806f59d6b62.jpg">Open file</a>
+  <span class="hideMobile">(</span><span class="sizeLabel">268.94 KB</span> <span class="dimensionLabel">1748x1268</span>
+  <a class="originalNameLink" href="/.media/9d43d81b49fbc280f02ab52ff041c3a6277655b7f28fc4f943fbd806f59d6b62.jpg" download="b&w.jpg">b&w.jpg</a><span class="hideMobile">)</span>
+</div>
+
+<div>
+  
+  
+</div>
+<a class="imgLink" target="_blank" href="/.media/9d43d81b49fbc280f02ab52ff041c3a6277655b7f28fc4f943fbd806f59d6b62.jpg" data-filewidth="1748" data-fileheight="1268" data-filemime="image/jpeg"><img loading="lazy" src="/.media/t_9d43d81b49fbc280f02ab52ff041c3a6277655b7f28fc4f943fbd806f59d6b62"></a>
+</figure><figure class="uploadCell"><div class="uploadDetails">
+  <a class="nameLink" target="_blank" href="/.media/aa00c52d37fe96d2cf6cdf6a7025c0e929a8c2a3d5b205ce3989bf7b2af25abd.jpg">Open file</a>
+  <span class="hideMobile">(</span><span class="sizeLabel">29.97 KB</span> <span class="dimensionLabel">700x428</span>
+  <a class="originalNameLink" href="/.media/aa00c52d37fe96d2cf6cdf6a7025c0e929a8c2a3d5b205ce3989bf7b2af25abd.jpg" download="pantsu.jpeg">pantsu.jpeg</a><span class="hideMobile">)</span>
+</div>
+
+<div>
+  
+  
+</div>
+<a class="imgLink" target="_blank" href="/.media/aa00c52d37fe96d2cf6cdf6a7025c0e929a8c2a3d5b205ce3989bf7b2af25abd.jpg" data-filewidth="700" data-fileheight="428" data-filemime="image/jpeg"><img loading="lazy" src="/.media/t_aa00c52d37fe96d2cf6cdf6a7025c0e929a8c2a3d5b205ce3989bf7b2af25abd"></a>
+</figure><figure class="uploadCell"><div class="uploadDetails">
+  <a class="nameLink" target="_blank" href="/.media/c957da0d1fbcbfdd2e72b17b430d0a0542f5f62a3ae055204a672873426acbf3.jpg">Open file</a>
+  <span class="hideMobile">(</span><span class="sizeLabel">83.54 KB</span> <span class="dimensionLabel">1280x720</span>
+  <a class="originalNameLink" href="/.media/c957da0d1fbcbfdd2e72b17b430d0a0542f5f62a3ae055204a672873426acbf3.jpg" download="bobas.jpeg">bobas.jpeg</a><span class="hideMobile">)</span>
+</div>
+
+<div>
+  
+  
+</div>
+<a class="imgLink" target="_blank" href="/.media/c957da0d1fbcbfdd2e72b17b430d0a0542f5f62a3ae055204a672873426acbf3.jpg" data-filewidth="1280" data-fileheight="720" data-filemime="image/jpeg"><img loading="lazy" src="/.media/t_c957da0d1fbcbfdd2e72b17b430d0a0542f5f62a3ae055204a672873426acbf3"></a>
+</figure><figure class="uploadCell"><div class="uploadDetails">
+  <a class="nameLink" target="_blank" href="/.media/48e2205e889a1fecc671a95867af9c3df8ad315bdcec18e8c88c982be4a49e62.jpg">Open file</a>
+  <span class="hideMobile">(</span><span class="sizeLabel">473.54 KB</span> <span class="dimensionLabel">1748x1268</span>
+  <a class="originalNameLink" href="/.media/48e2205e889a1fecc671a95867af9c3df8ad315bdcec18e8c88c982be4a49e62.jpg" download="charlie4.jpg">charlie4.jpg</a><span class="hideMobile">)</span>
+</div>
+
+<div>
+  
+  
+</div>
+<a class="imgLink" target="_blank" href="/.media/48e2205e889a1fecc671a95867af9c3df8ad315bdcec18e8c88c982be4a49e62.jpg" data-filewidth="1748" data-fileheight="1268" data-filemime="image/jpeg"><img loading="lazy" src="/.media/t_48e2205e889a1fecc671a95867af9c3df8ad315bdcec18e8c88c982be4a49e62"></a>
+</figure><figure class="uploadCell"><div class="uploadDetails">
+  <a class="nameLink" target="_blank" href="/.media/76127fc134a60b8bbe2e5059fac90e30204e1ceb4462e4bd310bba0a8f808eb0.jpg">Open file</a>
+  <span class="hideMobile">(</span><span class="sizeLabel">430.35 KB</span> <span class="dimensionLabel">1256x938</span>
+  <a class="originalNameLink" href="/.media/76127fc134a60b8bbe2e5059fac90e30204e1ceb4462e4bd310bba0a8f808eb0.jpg" download="marie4.jpg">marie4.jpg</a><span class="hideMobile">)</span>
+</div>
+
+<div>
+  
+  
+</div>
+<a class="imgLink" target="_blank" href="/.media/76127fc134a60b8bbe2e5059fac90e30204e1ceb4462e4bd310bba0a8f808eb0.jpg" data-filewidth="1256" data-fileheight="938" data-filemime="image/jpeg"><img loading="lazy" src="/.media/t_76127fc134a60b8bbe2e5059fac90e30204e1ceb4462e4bd310bba0a8f808eb0"></a>
+</figure></div>
+  <div class="divMessage">As no one mentioned Jean Séria&apos;s movies.
+I think it was some hype at this time (around 70&apos;s) in France treating subject like this.
+<em>Don&apos;t deliver us from evil</em> seems quite an enjoyable movie tho.
+<span class="spoiler">Daniel Cohn-Bendit will approve.</span></div>
+  
+  
+  
+</div>
+</div></div>
+</div></div>
+
+      <hr class="clearer">
+
+      <nav class="board-nav" id="board-bottom-nav">
+
+        <div>
+          <a class="bracket-button" href="..">Return</a>
+          <a class="bracket-button" href="../catalog.html">Catalog</a>
+          <a class="bracket-button" href="#">Go to Top</a>
+
+          <span class="divRefresh hidden">
+            <input type="button" id="refreshButton" value="Refresh">
+
+            <label>
+              <input id="checkboxChangeRefresh" type="checkbox" checked="">
+              Auto <span id="labelRefresh"></span>
+            </label>
+          </span>
+        </div>
+
+        <div id="boardContentLinks" class="bracket-list">
+          <a id="linkManagement" href="/boardManagement.js?boardUri=film">Manage Board</a>
+          <a id="linkMod" href="/mod.js?boardUri=film&amp;threadId=881">Moderate Thread</a>
+        </div>
+
+      </nav>
+
+        <div id="actionsForm"><details>
+  <summary>Report/Delete/Moderation Forms</summary>
+
+  <fieldset class="reportFieldset">
+    <legend>Delete</legend>
+
+    <div class="contentAction">
+      <label>
+        Password
+        <input type="text" class="deletionField" id="deletionFieldPassword" name="password">
+      </label>
+      <label>
+        <input type="checkbox" class="deletionField" id="checkboxOnlyFiles" name="deleteUploads">
+        Delete only files (Removes the file reference to the posts)
+      </label>
+      <label>
+        <input type="checkbox" class="deletionField" id="checkboxMediaDeletion" name="deleteMedia">
+        Delete media (Removes the saved files from the server)
+      </label>
+      <button type="submit" id="deleteFormButton" value="delete" name="action">Delete</button>
+
+    </div>
+  </fieldset>
+
+  <fieldset class="reportFieldset">
+    <legend>Report</legend>
+
+    <div class="contentAction">
+
+      <label>
+        Reason
+        <input type="text" class="reportField" id="reportFieldReason" name="reasonReport">
+      </label>
+      <label>
+        <input type="checkbox" class="reportField" id="checkboxGlobalReport" name="globalReport">
+        Global
+      </label>
+      <img class="captchaImage" src="/captcha.js">
+
+      <input type="button" class="hidden reloadCaptchaButton" value="Reload">
+      <span class="captchaTimer"></span>
+      <br>
+
+      <input name="captchaReport" type="text" class="captchaField reportField" id="fieldCaptchaReport" placeholder="answer">
+
+      <a href="/noCookieCaptcha.js" class="small">no cookies?</a>
+      <br>
+
+      <button type="submit" id="reportFormButton" value="report" name="action">Report</button>
+
+    </div>
+  </fieldset>
+
+  
+</details>
+</div>
+
+      </form></div>
+
+    
+
+  
+
+  <footer id="footer"></footer>
+
+
+
+<script src="/.static/js/crypto.js"></script>
+<script src="/.static/js/api.js"></script>
+<script src="/.static/js/postCommon.js"></script>
+<script src="/.static/js/captchaModal.js"></script>
+<script src="/.static/js/thumbs.js"></script>
+<script src="/.static/js/tooltips.js"></script>
+<script src="/.static/js/posting.js"></script>
+<script src="/.static/js/thread.js"></script>
+<script src="/.static/js/captchaUtils.js"></script>
+<script src="/.static/js/draggable.js"></script>
+<script src="/.static/js/qr.js"></script>
+<script src="/.static/js/themes.js"></script>
+<script src="/.static/js/settingsMenu.js"></script>
+<script src="/.static/js/hiding.js"></script>
+<script src="/.static/js/mediaHiding.js"></script>
+<script src="/.static/js/embed.js"></script>
+<script src="/.static/js/postingMenu.js"></script>
+<script src="/.static/js/watcher.js"></script>
+<script src="/.static/js/gallery.js"></script>
+<script src="/.static/js/favouriteBoards.js"></script>
+<script src="/.static/js/bottomForms.js"></script>
+<script src="/.static/js/bypassUtils.js"></script>
+<script src="/.static/js/webring.js"></script>
+
+
+</body></html>
